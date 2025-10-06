@@ -1,0 +1,20 @@
+import React from 'react'
+import Library from './Library'
+
+const Grid = () => {
+  return (
+    <div className='flex flex-1 w-full'>
+      <aside className='basis-1/5 bg-red-400'>
+        <Library/>
+      </aside>
+      <main className='basis-2/3 bg-red-600'>
+      
+      </main>
+      <aside className='basis-1/5 bg-red-400'>
+
+      </aside>
+    </div>
+  )
+}
+
+export default Grid
