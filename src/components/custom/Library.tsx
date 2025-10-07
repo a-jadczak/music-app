@@ -30,7 +30,7 @@ const Library = () => {
             </Tooltip>
           </CardAction>
         </CardHeader>
-        <CardContent className='flex flex-col h-[800px]'>
+        <CardContent className='flex flex-col overflow-hidden'>
 
           <ButtonGroup>
               <Select defaultValue="all">
@@ -52,10 +52,7 @@ const Library = () => {
 
           <Separator className='mt-5 mb-3'/>
 
-          <ScrollArea className="flex-1 min-h-0 overflow-y-auto">
-            <LibraryElement/>
-            <LibraryElement/>
-            <LibraryElement/>
+          <ScrollArea className='flex-1 overflow-auto'>
             <LibraryElement/>
             <LibraryElement/>
             <LibraryElement/>

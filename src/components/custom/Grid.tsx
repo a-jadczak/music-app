@@ -3,8 +3,8 @@ import Library from './Library'
 
 const Grid = () => {
   return (
-    <div className='flex flex-1 w-full'>
-      <aside className='basis-1/5 bg-red-400'>
+    <div className='flex flex-1 w-full gap-1.5 h-100'>
+      <aside className='basis-1/5'>
         <Library/>
       </aside>
       <main className='basis-2/3 bg-red-600'>
