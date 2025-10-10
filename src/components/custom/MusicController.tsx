@@ -1,7 +1,8 @@
 import React from 'react'
 import Album from './musicContent/Album'
-import { PauseIcon, PlayIcon, SkipBack, SkipForward } from 'lucide-react'
+import { ListMusicIcon, PauseIcon, PlayIcon, Settings, SkipBack, SkipForward, VolumeIcon, VolumeXIcon } from 'lucide-react'
 import { Progress } from "@/components/ui/progress"
+import { Slider } from "@/components/ui/slider"
 
 const MusicController = () => {
   return (
@@ -27,8 +28,17 @@ const MusicController = () => {
         </div>
 
       </div>
-      <div className='flex-1'>
-        Div 3
+      <div className='flex-1 flex items-center justify-end gap-4'>
+        <ListMusicIcon size={27.5}/>
+        <div className='flex items-center gap-2 w-50'>
+          {/* <VolumeIcon size={40}/> */}
+          <VolumeXIcon size={35}/>
+          <Slider 
+            defaultValue={[12]}
+            max={100}
+            step={1} />
+        </div>
+        <Settings size={30}/>
       </div>
     </footer>
   )
