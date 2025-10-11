@@ -1,9 +1,9 @@
 import React from 'react'
-import { Input } from '../ui/input'
+import { Input } from '../../ui/input'
 import { SearchIcon } from 'lucide-react'
-import { Separator } from '../ui/separator'
-import LibraryElement from './listElements/LibraryElement'
-import { ScrollArea } from '../ui/scroll-area'
+import { Separator } from '../../ui/separator'
+import LibraryElement from '../listElements/LibraryElement'
+import { ScrollArea } from '../../ui/scroll-area'
 
 const SearchBar = () => {
   return (
@@ -19,13 +19,13 @@ const SearchBar = () => {
           className='absolute top-0 right-0 h-full mr-3'
         />
       </div>
-      <div className='relative w-100'>
+
+      {/* <div className='relative w-100'>
         <div className="absolute mt-2 p-3.5 rounded-2xl bg-neutral-800 w-100 h-100
         flex flex-col">
           <h2 className='text-lg font-semibold'>Last searched</h2>
           <Separator className='mt-2 mb-3'/>
 
-          {/* List */}
           <ScrollArea className='flex-1 overflow-auto'>
             <LibraryElement/>
             <LibraryElement/>
@@ -39,7 +39,10 @@ const SearchBar = () => {
             <LibraryElement/>
           </ScrollArea>
         </div>
-      </div>
+      </div> */}
+
+
+
     </header>
   )
 }

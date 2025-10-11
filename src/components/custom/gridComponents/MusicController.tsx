@@ -1,5 +1,5 @@
 import React from 'react'
-import Album from './musicContent/Album'
+import Album from '../musicContent/Album'
 import { ListMusicIcon, PauseIcon, PlayIcon, Settings, SkipBack, SkipForward, VolumeIcon, VolumeXIcon } from 'lucide-react'
 import { Progress } from "@/components/ui/progress"
 import { Slider } from "@/components/ui/slider"
@@ -12,7 +12,7 @@ const MusicController = () => {
       </div>
       <div className='flex-1/8'>
 
-        <div className='flex justify-center items-center gap-3'>
+        <div className='flex justify-center items-center gap-10'>
           <SkipBack size={30}/>
           <button className='bg-white rounded-full p-2 hover:cursor-pointer'>
             <PlayIcon color='black' size={35}/>

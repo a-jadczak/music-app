@@ -1,4 +1,5 @@
-import Library from './Library'
+import Library from './gridComponents/Library'
+import MainPage from './pages/MainPage'
 
 const Grid = () => {
   return (
@@ -7,7 +8,7 @@ const Grid = () => {
         <Library/>
       </aside>
       <main className='basis-2/3 bg-red-600'>
-      
+        <MainPage/>
       </main>
       <aside className='basis-1/5 bg-red-400'>
 

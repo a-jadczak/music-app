@@ -1,14 +1,14 @@
 import { PlusIcon, SearchIcon } from 'lucide-react'
-import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './../ui/card'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "./../ui/select"
-import { Button } from '../ui/button'
-import { ButtonGroup } from '../ui/button-group'
-import { Input } from '../ui/input'
-import { Separator } from '../ui/separator'
+import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../ui/card'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "../../ui/select"
+import { Button } from '../../ui/button'
+import { ButtonGroup } from '../../ui/button-group'
+import { Input } from '../../ui/input'
+import { Separator } from '../../ui/separator'
 import { Tooltip } from '@radix-ui/react-tooltip'
-import { TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip'
-import LibraryElement from './listElements/LibraryElement'
-import { ScrollArea } from '../ui/scroll-area'
+import { TooltipContent, TooltipProvider, TooltipTrigger } from '../../ui/tooltip'
+import LibraryElement from '../listElements/LibraryElement'
+import { ScrollArea } from '../../ui/scroll-area'
 
 const Library = () => {
   return (
