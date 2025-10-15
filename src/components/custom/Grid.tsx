@@ -1,4 +1,6 @@
+import { Card } from '../ui/card'
 import Library from './gridComponents/Library'
+import SidePage from './gridComponents/SidePage'
 import MainPage from './pages/MainPage'
 
 const Grid = () => {
@@ -7,11 +9,13 @@ const Grid = () => {
       <aside className='basis-1/5'>
         <Library/>
       </aside>
-      <main className='basis-2/3 bg-red-600'>
+      <main className='basis-2/3'>
         <MainPage/>
       </main>
-      <aside className='basis-1/5 bg-red-400'>
-
+      <aside className='basis-1/5'>
+        <Card className='h-full'>
+          <SidePage/>
+        </Card>
       </aside>
     </div>
   )

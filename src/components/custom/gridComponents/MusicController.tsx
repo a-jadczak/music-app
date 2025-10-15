@@ -29,6 +29,7 @@ const MusicController = () => {
 
       </div>
       <div className='flex-1 flex items-center justify-end gap-4'>
+        {/* <BookUserIcon/> */}
         <ListMusicIcon size={27.5}/>
         <div className='flex items-center gap-2 w-50'>
           {/* <VolumeIcon size={40}/> */}
