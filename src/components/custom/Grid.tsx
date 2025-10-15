@@ -1,7 +1,9 @@
 import { Card } from '../ui/card'
+import { ScrollArea } from '../ui/scroll-area'
 import Library from './gridComponents/Library'
 import SidePage from './gridComponents/SidePage'
 import MainPage from './pages/MainPage'
+import SearchPage from './pages/SearchPage'
 
 const Grid = () => {
   return (
@@ -10,7 +12,11 @@ const Grid = () => {
         <Library/>
       </aside>
       <main className='basis-2/3'>
-        <MainPage/>
+        <Card className='h-full'>
+          <ScrollArea className='overflow-hidden'>
+            <SearchPage/>
+          </ScrollArea>
+        </Card>
       </main>
       <aside className='basis-1/5'>
         <Card className='h-full'>

@@ -117,4 +117,7 @@
   body {
     @apply bg-background text-foreground;
   }
+  .grayed-text {
+    @apply text-neutral-400;
+  }
 }

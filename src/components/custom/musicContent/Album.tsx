@@ -10,7 +10,7 @@ const Album = () => {
       />
       <div className='ml-3 flex flex-col'>
         <span className='text-xl'>Colma</span>
-        <span className='text-md text-neutral-400'>Buckethead</span>
+        <span className='text-md grayed-text'>Buckethead</span>
       </div>
     </div>
   )
