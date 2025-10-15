@@ -1,6 +1,7 @@
 import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import React from 'react'
+import MATitle from '../../ui/text/MATitle'
 
 const ArtistInfo = () => {
   return (
@@ -10,12 +11,12 @@ const ArtistInfo = () => {
           src='https://picsum.photos/300/300'
           className='rounded-xl w-full'
         />
-        <h2 className='text-4xl font-semibold mt-1'>Title</h2>
+        <MATitle size='4xl' className='mt-1'>Page Title</MATitle>
         <span className='grayed-text text-lg'>Description</span>
         {/* <h2 className='text-xl mb-2 font-semibold'>Now playing</h2>
         <LibraryElement/>
         <Separator className='mt-2 mb-3'/> */}
-        <Card className='mt-2 py-0 border-none'>
+        <Card className='mt-4 py-0 border-none'>
           <div className='flex flex-col justify-around h-full'>
             <div className='border rounded-3xl'>
               <img
@@ -24,7 +25,9 @@ const ArtistInfo = () => {
                 className='w-full rounded-t-3xl'
               />
               <CardHeader>
-                <CardTitle className='text-xl font-semibold pt-1'>Artist</CardTitle>
+                <CardTitle className='pt-1'>
+                  <MATitle size='xl'>Artist</MATitle>
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className=''>29 212 Followers</p>
@@ -39,7 +42,9 @@ const ArtistInfo = () => {
         <Card className='rounded-3xl mt-2'>
           <div className='flex flex-col justify-around h-full'>
             <CardHeader>
-              <CardTitle className='text-xl font-semibold pt-1'>Credits</CardTitle>
+              <CardTitle className='text-xl font-semibold pt-1'>
+                <MATitle size='xl'>Credits</MATitle>
+              </CardTitle>
               <CardAction>Show all</CardAction>
             </CardHeader>
             <CardContent className='py-3'>

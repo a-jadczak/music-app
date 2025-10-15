@@ -3,13 +3,14 @@ import React from 'react'
 import Album from '../musicContent/Album'
 import MusicEntityCarousel from './pageComponents/MusicEntityCarousel'
 import { Separator } from '@/components/ui/separator'
+import MATitle from '../ui/text/MATitle'
 
 const SearchPage = () => {
   return (
     <> 
       <div className="flex w-full px-3 gap-4 mb-10">
         <div className="flex-1 flex flex-col">
-          <h2 className="text-2xl font-bold mb-2">Top result</h2>
+          <MATitle weight='bold' className='mb-2'>Top result</MATitle>
           <Card className="flex-1 flex flex-col">
             <CardContent className="flex-1">
               <img 
@@ -24,7 +25,7 @@ const SearchPage = () => {
         </div>
 
         <div className="flex-[2] flex flex-col">
-          <h2 className="text-2xl font-bold mb-2">Songs</h2>
+          <MATitle weight='bold' className='mb-2'>Songs</MATitle>
           <div className="flex flex-col gap-1 flex-1">
             <Album/>
             <Album/>
