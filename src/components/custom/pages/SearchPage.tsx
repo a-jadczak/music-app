@@ -4,6 +4,7 @@ import Album from '../musicContent/Album'
 import MusicEntityCarousel from './pageComponents/MusicEntityCarousel'
 import { Separator } from '@/components/ui/separator'
 import MATitle from '../ui/text/MATitle'
+import MASecondaryText from '../ui/text/MASecondaryText'
 
 const SearchPage = () => {
   return (
@@ -18,8 +19,8 @@ const SearchPage = () => {
                 alt="" 
                 className="rounded-md w-25 mb-2"
               />
-              <h2 className="text-2xl font-bold">Title</h2>
-              <span className="grayed-text">info</span>
+              <MATitle weight='bold' >Title</MATitle>
+              <MASecondaryText>info</MASecondaryText>
             </CardContent>
           </Card>
         </div>

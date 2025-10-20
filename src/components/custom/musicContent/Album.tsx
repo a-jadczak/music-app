@@ -1,4 +1,6 @@
 import React from 'react'
+import MASecondaryText from '../ui/text/MASecondaryText'
+import MATitle from '../ui/text/MATitle'
 
 const Album = () => {
   return (
@@ -9,8 +11,8 @@ const Album = () => {
         className='rounded-md'
       />
       <div className='ml-3 flex flex-col'>
-        <span className='text-xl'>Colma</span>
-        <span className='text-md grayed-text'>Buckethead</span>
+        <MATitle weight='normal' size='xl'>Colma</MATitle>
+        <MASecondaryText>Buckethead</MASecondaryText>
       </div>
     </div>
   )

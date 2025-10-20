@@ -2,6 +2,8 @@ import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader,
 import { ScrollArea } from '@/components/ui/scroll-area'
 import React from 'react'
 import MATitle from '../../ui/text/MATitle'
+import MASmallAnchor from '../../ui/text/MASmallAnchor'
+import MASecondaryText from '../../ui/text/MASecondaryText'
 
 const ArtistInfo = () => {
   return (
@@ -12,7 +14,7 @@ const ArtistInfo = () => {
           className='rounded-xl w-full'
         />
         <MATitle size='4xl' className='mt-1'>Page Title</MATitle>
-        <span className='grayed-text text-lg'>Description</span>
+        <MASecondaryText size='lg' className='mb-5'>Description</MASecondaryText>
         {/* <h2 className='text-xl mb-2 font-semibold'>Now playing</h2>
         <LibraryElement/>
         <Separator className='mt-2 mb-3'/> */}
@@ -33,7 +35,7 @@ const ArtistInfo = () => {
                 <p className=''>29 212 Followers</p>
               </CardContent>
               <CardFooter>
-                <p className='grayed-text pb-2'>Description</p>
+                <MASecondaryText className='mb-5'>Description</MASecondaryText>
               </CardFooter>
             </div>
           </div>
@@ -50,8 +52,8 @@ const ArtistInfo = () => {
             <CardContent className='py-3'>
               <div className='flex w-full items-center'>
                 <div className='flex-1'>
-                  <h3 className='text-lg'>Artist Name</h3>
-                  <span className='grayed-text'>Role</span>
+                  <MATitle size='lg' weight='normal'>Artist Name</MATitle>
+                  <MASmallAnchor>Role</MASmallAnchor>
                 </div>
                 <div>
                   <button>Follow Btn</button>

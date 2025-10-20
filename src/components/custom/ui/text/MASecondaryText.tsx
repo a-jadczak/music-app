@@ -1,17 +1,15 @@
 import { type MATextProps } from '@/scripts/types/MATextProps'
 
-const MASmallText = ({ size = '2xl', weight = 'semibold', className, children }: MATextProps) => {
+const MASecondaryText = ({ size = 'md', weight = 'normal', className, children }: MATextProps) => {
   return (
     <span className={`
       grayed-text
       text-${size} font-${weight} ${className} 
-      hover:cursor-pointer 
-      hover:text-white
-      hover:underline
+      cursor-default
       `}>
       {children}
     </span>
   );
 };
 
-export default MASmallText
+export default MASecondaryText
