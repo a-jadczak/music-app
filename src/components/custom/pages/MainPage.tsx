@@ -8,7 +8,7 @@ const MainPage = () => {
   return (
     <>
       <RecentlyPlayed/>
-      <MusicEntityCarousel/>
+      <MusicEntityCarousel title={''} musicEntity={'Artist'}/>
     </>
   )
 }
