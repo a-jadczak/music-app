@@ -12,9 +12,9 @@ import MATextToggle from '../ui/buttons/MATextToggle'
 const ArtistPage = () => {
   return (
     <>
-      <div className='relative h-100'>
+      <div className='relative'>
         <img src="https://picsum.photos/1200/400" 
-          className='absolute h-full'
+          className='w-full rounded-t-lg'
           alt="" 
         />
         <div className='p-5 absolute z-10 bottom-0'>
@@ -48,7 +48,7 @@ const ArtistPage = () => {
               alt="" 
               className='rounded-full w-25'
             />
-            <MALike className="absolute bottom-0 right-0" liked={true}/>
+            <MALike className="absolute bottom-0 right-0" liked={true} size={5}/>
           </div>
           <div>
             <MATitle size='xl'>You've liked X songs</MATitle>

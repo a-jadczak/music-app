@@ -3,6 +3,7 @@ import MATitle from '../text/MATitle'
 import MASmallAnchor from '../text/MASmallAnchor'
 import { Ellipsis } from 'lucide-react'
 import MALike from '../buttons/MALike'
+import MAOptions from '../buttons/MAOptions'
 
 const MASongItem = ({index} : {index: number} ) => {
   return (
@@ -26,13 +27,13 @@ const MASongItem = ({index} : {index: number} ) => {
         <MATitle size='md' weight='normal'>300 000</MATitle>
       </div>
       <div className='flex items-center align-middle'>
-        <MALike className={''} liked={false}/>
+        <MALike className={''} liked={false} size={5}/>
       </div>
       <div className='flex items-center'>
         <MATitle size='md' weight='normal'>3:57</MATitle>
       </div>
       <div className='flex items-center'>
-        <Ellipsis/>
+        <MAOptions/>
       </div>
     </div>
   )

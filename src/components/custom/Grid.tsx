@@ -2,6 +2,7 @@ import { Card } from '../ui/card'
 import { ScrollArea } from '../ui/scroll-area'
 import Library from './gridComponents/Library'
 import SidePage from './gridComponents/SidePage'
+import AlbumPage from './pages/AlbumPage'
 import ArtistPage from './pages/ArtistPage'
 import MainPage from './pages/MainPage'
 import SearchPage from './pages/SearchPage'
@@ -13,9 +14,9 @@ const Grid = () => {
         <Library/>
       </aside>
       <main className='basis-2/3'>
-        <Card className='h-full'>
+        <Card className='h-full py-0'>
           <ScrollArea className='overflow-hidden'>
-            <ArtistPage/>
+            <AlbumPage/>
           </ScrollArea>
         </Card>
       </main>

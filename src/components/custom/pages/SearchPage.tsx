@@ -8,7 +8,7 @@ import MASecondaryText from '../ui/text/MASecondaryText'
 
 const SearchPage = () => {
   return (
-    <> 
+    <div className='my-8'> 
       <div className="flex w-full px-3 gap-4 mb-10">
         <div className="flex-1 flex flex-col">
           <MATitle weight='bold' className='mb-2'>Top result</MATitle>
@@ -38,7 +38,7 @@ const SearchPage = () => {
 
       <MusicEntityCarousel title='Artists' musicEntity='Artist'/>
       <MusicEntityCarousel title='Albums' musicEntity='Album'/>
-    </>
+    </div>
   )
 }
 

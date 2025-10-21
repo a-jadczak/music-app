@@ -1,21 +1,28 @@
 import { Check, Plus } from 'lucide-react'
 import React from 'react'
 
-const MALike = ({liked, className}: {liked: boolean, className: string}) => {
+const MALike = ({liked, className, size}: {liked: boolean, size: number, className: string}) => {
   return (
     <>
     {
       liked
       ?
-      <button className={`bg-white rounded-full p-0.5 ${className}`}>
-        <Check color='black' size={17.5}/>
+      <button className={`bg-white rounded-full p-0.5 ${className}
+        size-${size}
+        flex justify-center
+        items-center
+      `}>
+        <Check color='black'/>
       </button>
       :
       <button className={`border-2 border-neutral-600 rounded-full p-0.5 ${className}
+        size-${size}
+        flex justify-center
+        items-center
       hover:border-white
         hover:cursor-pointer
       `}>
-        <Plus color='white' size={15}/>
+        <Plus color='white'/>
       </button>
     }
     </>

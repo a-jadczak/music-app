@@ -6,10 +6,10 @@ import RecentlyPlayed from './pageComponents/RecentlyPlayed'
 
 const MainPage = () => {
   return (
-    <>
+    <div className='my-8'>
       <RecentlyPlayed/>
       <MusicEntityCarousel title={''} musicEntity={'Artist'}/>
-    </>
+    </div>
   )
 }
 
