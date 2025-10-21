@@ -35,16 +35,18 @@ const AlbumPage = () => {
       <div className='p-4'>
         <div className='flex items-center gap-4 w-full p-3'>
           <MAPlay/>
-          <MALike liked={false} className={''} size={8}/>
+          <MALike liked={false} className={'size-8'}/>
           <MAOptions/>
         </div>
-        <div className='flex p-1'>
-          <MASecondaryText className='px-2'>#</MASecondaryText>
-          <MASecondaryText className='flex-4'>Title</MASecondaryText>
-          <MASecondaryText className='flex-1'>Plays</MASecondaryText>
-          <MASecondaryText className=''>
-            <Timer/>
+        <div className='grid cols-16 p-1'>
+          <MASecondaryText className='flex justify-center -translate-x-2'>#</MASecondaryText>
+          <MASecondaryText className='col-span-9'>Title</MASecondaryText>
+          <MASecondaryText className='col-start-11 col-span-3 flex justify-end'>Plays</MASecondaryText>
+          <div className='col-start-14'></div>
+          <MASecondaryText className='col-start-15 flex items-center justify-end -translate-x-3'>
+            <Timer size={20}/>
           </MASecondaryText>
+          <div className='col-start-16 '></div>
         </div>
         <Separator/>
 

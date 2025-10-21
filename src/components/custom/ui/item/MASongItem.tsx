@@ -7,32 +7,34 @@ import MAOptions from '../buttons/MAOptions'
 
 const MASongItem = ({index} : {index: number} ) => {
   return (
-    <div className='flex items-stretch w-full gap-4 rounded p-1
+    <div className='grid 
+    grid-cols-16
+    w-full gap-4 rounded p-1
       hover:bg-neutral-700
     '>
       <div className='px-2 flex items-center'>
-        <MATitle size='lg' weight='normal'>{index}</MATitle>
+        <MATitle size='lg' className='w-full text-center ' weight='normal'>{index}</MATitle>
       </div>
-      <div className='flex items-center'>
+      <div className='col-span-9 flex flex-center items-center '>
         <img 
+          className='rounded-lg h-12.5 mr-3'
           src='https://picsum.photos/300/300'
-          className='rounded-lg h-12.5'
         />
+        <div>
+          <MATitle size='lg'>Song name</MATitle>
+          <MASmallAnchor>Buckethead</MASmallAnchor>
+        </div>
       </div>
-      <div className='flex-3'>
-        <MATitle size='lg'>Song name</MATitle>
-        <MASmallAnchor>Buckethead</MASmallAnchor>
-      </div>
-      <div className='flex-1 flex items-center'>
+      <div className='col-start-11 col-span-3 flex items-center justify-end'>
         <MATitle size='md' weight='normal'>300 000</MATitle>
       </div>
-      <div className='flex items-center align-middle'>
-        <MALike className={''} liked={false} size={5}/>
+      <div className='col-start-14 flex items-center justify-center '>
+        <MALike liked={false} className="size-5"/>
       </div>
-      <div className='flex items-center'>
-        <MATitle size='md' weight='normal'>3:57</MATitle>
+      <div className='col-start-15 flex items-center justify-end'>
+        <MATitle size='md' weight='normal' className='-translate-y-0.5'>3:57</MATitle>
       </div>
-      <div className='flex items-center'>
+      <div className='col-start-16 flex items-center justify-center'>
         <MAOptions/>
       </div>
     </div>
