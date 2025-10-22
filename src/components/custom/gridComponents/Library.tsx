@@ -1,4 +1,4 @@
-import { PlusIcon, SearchIcon } from 'lucide-react'
+import { PlusIcon, SearchIcon, XIcon } from 'lucide-react'
 import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "../../ui/select"
 import { Button } from '../../ui/button'
@@ -9,45 +9,63 @@ import { Tooltip } from '@radix-ui/react-tooltip'
 import { TooltipContent, TooltipProvider, TooltipTrigger } from '../../ui/tooltip'
 import LibraryElement from '../listElements/LibraryElement'
 import { ScrollArea } from '../../ui/scroll-area'
+import MATitle from '../ui/text/MATitle'
+import MASecondaryText from '../ui/text/MASecondaryText'
+import { useState } from 'react'
+import MACreateCollectionModal from '../ui/modals/MACreateCollectionModal'
 
 const Library = () => {
+  const [inputHidden, setInputHidden] = useState<boolean>(true);
+  const [search, setSearch] = useState<string>("");
+
   return (
     <TooltipProvider>
       <Card className='h-full'>
         <CardHeader>
-          <CardTitle>Library</CardTitle>
-          <CardDescription>Home {">"} ... </CardDescription>
+          <CardTitle>
+            <MATitle>Library</MATitle>
+          </CardTitle>
+          <CardDescription>
+            <MASecondaryText>Home {">"} ...</MASecondaryText>
+          </CardDescription>
           <CardAction>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="outline" size="icon" >
-                  <PlusIcon />
-                </Button>
+                <MACreateCollectionModal/>
               </TooltipTrigger>
-              <TooltipContent>
+              <TooltipContent >
                 <p>Create new playlist</p>
               </TooltipContent>
             </Tooltip>
           </CardAction>
         </CardHeader>
         <CardContent className='flex flex-col overflow-hidden'>
-
           <ButtonGroup>
-              <Select defaultValue="all">
-                  <SelectTrigger className="w-[100px]">
-                  <SelectValue placeholder="All" />
-                  </SelectTrigger>
-                  <SelectContent>
-                      <SelectItem value="all">All</SelectItem>
-                      <SelectItem value="playlists">Playlists</SelectItem>
-                      <SelectItem value="albums">Albums</SelectItem>
-                      <SelectItem value="artists">Artists</SelectItem>
-                  </SelectContent>
-              </Select>
-              <Input hidden={true} placeholder="Search..." />
-              <Button variant="outline" size="icon">
-                  <SearchIcon />
-              </Button>
+            <Select defaultValue="all">
+              <SelectTrigger className="w-[100px]">
+              <SelectValue placeholder="All" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All</SelectItem>
+                <SelectItem value="playlists">Playlists</SelectItem>
+                <SelectItem value="albums">Albums</SelectItem>
+                <SelectItem value="artists">Artists</SelectItem>
+              </SelectContent>
+            </Select>
+            <Input
+              className=
+              {`transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-0
+              ${inputHidden ? 'w-0 px-0 border-0 opacity-0opacity-0' : 'w-30 opacity-100'}`}
+              placeholder="Search..."
+            />
+            <Button 
+              variant="outline" 
+              size="icon"
+              onClick={() => setInputHidden(prev => prev = !prev)}
+              className='cursor-pointer'
+            >
+              {inputHidden ? <SearchIcon /> : <XIcon />}
+            </Button>
           </ButtonGroup>
 
           <Separator className='mt-5 mb-3'/>

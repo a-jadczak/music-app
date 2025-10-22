@@ -16,10 +16,10 @@ const SidePage = () => {
         <MATitle className='flex-1 ' weight='normal'>
           {view === "Queue" ? "Queue" : "Page Title"}
         </MATitle>
-        <IconButton active={view === "ArtistInfo"} onClick={(e) => setView("ArtistInfo")}>
+        <IconButton active={view === "ArtistInfo"} onClick={() => setView("ArtistInfo")}>
           <BookUserIcon/>
         </IconButton>
-        <IconButton active={view === "Queue"} onClick={(e) => setView("Queue")}>
+        <IconButton active={view === "Queue"} onClick={() => setView("Queue")}>
           <ListMusicIcon/>
         </IconButton>
       </div>
