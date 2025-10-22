@@ -6,6 +6,8 @@ import MASmallAnchor from '../../ui/text/MASmallAnchor'
 import MASecondaryText from '../../ui/text/MASecondaryText'
 import { Button } from '@/components/ui/button'
 import MATextToggle from '../../ui/buttons/MATextToggle'
+import MACreditModal from '../../ui/modals/MACreditModal'
+import MAArtistInfoModal from '../../ui/modals/MAArtistInfoModal'
 
 const ArtistInfo = () => {
   return (
@@ -31,6 +33,7 @@ const ArtistInfo = () => {
               <CardHeader>
                 <CardTitle className='pt-1'>
                   <MATitle size='xl'>Artist</MATitle>
+                  <MAArtistInfoModal/>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -50,7 +53,7 @@ const ArtistInfo = () => {
                 <MATitle size='xl'>Credits</MATitle>
               </CardTitle>
               <CardAction>
-                <MATextToggle className={''}>Show more</MATextToggle>
+                <MACreditModal/>
               </CardAction>
             </CardHeader>
             <CardContent className='py-3'>
@@ -60,6 +63,7 @@ const ArtistInfo = () => {
                   <MASmallAnchor>Role</MASmallAnchor>
                 </div>
                 <div>
+                  
                   <Button variant={'outline'}>Follow</Button>
                 </div>
               </div>
