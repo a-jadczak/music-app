@@ -1,13 +1,13 @@
 import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import React from 'react'
-import MATitle from '../../ui/text/MATitle'
-import MASmallAnchor from '../../ui/text/MASmallAnchor'
-import MASecondaryText from '../../ui/text/MASecondaryText'
+import MATitle from '../../../ui/text/MATitle'
+import MASmallAnchor from '../../../ui/text/MASmallAnchor'
+import MASecondaryText from '../../../ui/text/MASecondaryText'
 import { Button } from '@/components/ui/button'
-import MATextToggle from '../../ui/buttons/MATextToggle'
-import MACreditModal from '../../ui/modals/MACreditModal'
-import MAArtistInfoModal from '../../ui/modals/MAArtistInfoModal'
+import MATextToggle from '../../../ui/buttons/MATextToggle'
+import MACreditModal from '../../../ui/modals/MACreditModal'
+import MAArtistInfoModal from '../../../ui/modals/MAArtistInfoModal'
 
 const ArtistInfo = () => {
   return (
@@ -22,29 +22,30 @@ const ArtistInfo = () => {
         {/* <h2 className='text-xl mb-2 font-semibold'>Now playing</h2>
         <LibraryElement/>
         <Separator className='mt-2 mb-3'/> */}
-        <Card className='mt-4 py-0 border-none'>
-          <div className='flex flex-col justify-around h-full'>
-            <div className='border rounded-3xl'>
-              <img
-                src="https://picsum.photos/1200/600"
-                alt=""
-                className='w-full rounded-t-3xl'
-              />
-              <CardHeader>
-                <CardTitle className='pt-1'>
-                  <MATitle size='xl'>Artist</MATitle>
-                  <MAArtistInfoModal/>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className=''>29 212 Followers</p>
-              </CardContent>
-              <CardFooter>
-                <MASecondaryText className='mb-5'>Description</MASecondaryText>
-              </CardFooter>
+        <MAArtistInfoModal>
+          <Card className='mt-4 py-0 border-none cursor-pointer'>
+            <div className='flex flex-col justify-around h-full'>
+              <div className='border rounded-3xl'>
+                <img
+                  src="https://picsum.photos/1200/600"
+                  alt=""
+                  className='w-full rounded-t-3xl'
+                />
+                <CardHeader>
+                  <CardTitle className='pt-1'>
+                    <MATitle size='xl' className='inline'>Artist</MATitle>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className=''>29 212 Followers</p>
+                </CardContent>
+                <CardFooter>
+                  <MASecondaryText className='mb-5'>Description</MASecondaryText>
+                </CardFooter>
+              </div>
             </div>
-          </div>
-        </Card>
+          </Card>
+        </MAArtistInfoModal>
 
         <Card className='rounded-3xl mt-2'>
           <div className='flex flex-col justify-around h-full'>

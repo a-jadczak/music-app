@@ -13,11 +13,11 @@ import Facebook from '@/assets/icons/socialMedia/Facebook'
 import XIcon from '@/assets/icons/socialMedia/XIcon'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
-const MAArtistInfoModal = () => {
+const MAArtistInfoModal = ({ children }: { children: React.ReactNode }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className='cursor-pointer'>Show more</Button>
+        {children}
       </DialogTrigger>
       <DialogContent className="w-full h-175">
         <ScrollArea className='overflow-auto'>
@@ -27,11 +27,9 @@ const MAArtistInfoModal = () => {
                 {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem key={index}>
                     <div className="p-1">
-                      <Card>
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                          <span className="text-4xl font-semibold">{index + 1}</span>
-                        </CardContent>
-                      </Card>
+                      <img 
+                        src='https://picsum.photos/1200/700'
+                        />
                     </div>
                   </CarouselItem>
                 ))}

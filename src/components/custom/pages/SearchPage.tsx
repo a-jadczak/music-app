@@ -19,7 +19,7 @@ const SearchPage = () => {
                 alt="" 
                 className="rounded-md w-25 mb-2"
               />
-              <MATitle weight='bold' >Title</MATitle>
+              <MATitle weight='bold'>Title</MATitle>
               <MASecondaryText>info</MASecondaryText>
             </CardContent>
           </Card>
