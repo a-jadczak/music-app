@@ -13,7 +13,7 @@ const MASongItem = ({index} : {index: number} ) => {
       hover:bg-neutral-700
     '>
       <div className='px-2 flex items-center'>
-        <MATitle size='lg' className='w-full text-center ' weight='normal'>{index}</MATitle>
+        <MATitle size='lg' className='w-full text-center' weight='normal'>{index}</MATitle>
       </div>
       <div className='col-span-9 flex flex-center items-center '>
         <img 
@@ -26,9 +26,9 @@ const MASongItem = ({index} : {index: number} ) => {
         </div>
       </div>
       <div className='col-start-11 col-span-3 flex items-center justify-end'>
-        <MATitle size='md' weight='normal'>300 000</MATitle>
+        <MATitle size='md' weight='normal' className='-translate-y-0.5'>300 000</MATitle>
       </div>
-      <div className='col-start-14 flex items-center justify-center '>
+      <div className='col-start-14 flex items-center justify-end'>
         <MALike liked={false} className="size-5"/>
       </div>
       <div className='col-start-15 flex items-center justify-end'>

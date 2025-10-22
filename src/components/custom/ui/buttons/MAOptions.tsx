@@ -1,11 +1,10 @@
 import { Ellipsis } from 'lucide-react'
-import React from 'react'
 
 const MAOptions = () => {
   return (
-    <>
+    <div className='inline-block cursor-pointer text-gray-400 hover:text-white'>
       <Ellipsis/>
-    </>
+    </div>
   )
 }
 

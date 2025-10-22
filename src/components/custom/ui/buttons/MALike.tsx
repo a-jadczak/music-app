@@ -15,13 +15,14 @@ const MALike = ({liked, className}: {liked: boolean, className: string}) => {
         <Check color='black'/>
       </button>
       :
-      <button className={`border-2 border-neutral-600 rounded-full p-0.5 ${className}
+      <button className={`border-2 border-neutral-500 rounded-full p-0.5 ${className}
         flex justify-center
-        items-center
+        items-center text-neutral-500
+        cursor-pointer
       hover:border-white
-        hover:cursor-pointer
+        hover:text-white
       `}>
-        <Plus color='white'/>
+        <Plus />
       </button>
     }
     </>

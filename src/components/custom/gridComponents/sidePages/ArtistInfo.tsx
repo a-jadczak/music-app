@@ -4,6 +4,8 @@ import React from 'react'
 import MATitle from '../../ui/text/MATitle'
 import MASmallAnchor from '../../ui/text/MASmallAnchor'
 import MASecondaryText from '../../ui/text/MASecondaryText'
+import { Button } from '@/components/ui/button'
+import MATextToggle from '../../ui/buttons/MATextToggle'
 
 const ArtistInfo = () => {
   return (
@@ -47,7 +49,9 @@ const ArtistInfo = () => {
               <CardTitle className='text-xl font-semibold pt-1'>
                 <MATitle size='xl'>Credits</MATitle>
               </CardTitle>
-              <CardAction>Show all</CardAction>
+              <CardAction>
+                <MATextToggle className={''}>Show more</MATextToggle>
+              </CardAction>
             </CardHeader>
             <CardContent className='py-3'>
               <div className='flex w-full items-center'>
@@ -56,7 +60,7 @@ const ArtistInfo = () => {
                   <MASmallAnchor>Role</MASmallAnchor>
                 </div>
                 <div>
-                  <button>Follow Btn</button>
+                  <Button variant={'outline'}>Follow</Button>
                 </div>
               </div>
             </CardContent>
