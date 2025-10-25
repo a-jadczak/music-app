@@ -6,7 +6,7 @@ import MALike from '../buttons/MALike'
 import MAOptions from '../buttons/MAOptions'
 import { Button } from '@/components/ui/button'
 
-const MASongItem = ({index} : {index: number} ) => {
+const MASongItemShort = ({index} : {index: number} ) => {
   return (
     <div className='grid 
     grid-cols-6
@@ -30,4 +30,4 @@ const MASongItem = ({index} : {index: number} ) => {
   )
 }
 
-export default MASongItem
+export default MASongItemShort
