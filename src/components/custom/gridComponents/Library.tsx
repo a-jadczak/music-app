@@ -12,8 +12,8 @@ import MASecondaryText from '../ui/text/MASecondaryText'
 import { useReducer, useState, type ReactElement } from 'react'
 import MACreateCollectionModal from '../ui/modals/MACreateCollectionModal'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuShortcut, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import CreatePlaylistForm from '../forms/CreatePlaylistForm'
-import CreateFolderForm from '../forms/CreateFolderForm'
+import CreatePlaylistForm from '../forms/modalFroms/CreatePlaylistForm'
+import CreateFolderForm from '../forms/modalFroms/CreateFolderForm'
 
 type ModalAction =
   { type: "CREATE_PLAYLIST" }
