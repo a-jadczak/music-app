@@ -5,21 +5,51 @@ import { Button } from '../../ui/button'
 import { ButtonGroup } from '../../ui/button-group'
 import { Input } from '../../ui/input'
 import { Separator } from '../../ui/separator'
-import { Tooltip } from '@radix-ui/react-tooltip'
-import { TooltipContent, TooltipProvider, TooltipTrigger } from '../../ui/tooltip'
 import LibraryElement from '../listElements/LibraryElement'
 import { ScrollArea } from '../../ui/scroll-area'
 import MATitle from '../ui/text/MATitle'
 import MASecondaryText from '../ui/text/MASecondaryText'
-import { useState } from 'react'
+import { useReducer, useState, type ReactElement } from 'react'
 import MACreateCollectionModal from '../ui/modals/MACreateCollectionModal'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuShortcut, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import CreatePlaylistForm from '../forms/CreatePlaylistForm'
+import CreateFolderForm from '../forms/CreateFolderForm'
+
+type ModalAction =
+  { type: "CREATE_PLAYLIST" }
+  | { type: "CREATE_FOLDER" }
+
+type ModalState = ReactElement | null
+
+function modalReducer(state: ModalState, action: ModalAction): ModalState {
+  switch (action.type) {
+    case "CREATE_PLAYLIST":
+      return <CreatePlaylistForm/>
+    case "CREATE_FOLDER":
+      return <CreateFolderForm/>
+    default:
+      return <></>
+  }
+}
 
 const Library = () => {
   const [inputHidden, setInputHidden] = useState<boolean>(true);
   const [search, setSearch] = useState<string>("");
 
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [formType, dispatch] = useReducer(modalReducer, null)
+
+  const openModal = (value: ModalAction) => {
+    setModalOpen(true)
+    dispatch(value)
+  }
+
   return (
-    <TooltipProvider>
+    <>
+      <MACreateCollectionModal open={modalOpen} onOpenChange={setModalOpen}>
+        {formType}
+      </MACreateCollectionModal>
+
       <Card className='h-full'>
         <CardHeader>
           <CardTitle>
@@ -29,14 +59,28 @@ const Library = () => {
             <MASecondaryText>Home {">"} ...</MASecondaryText>
           </CardDescription>
           <CardAction>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <MACreateCollectionModal/>
-              </TooltipTrigger>
-              <TooltipContent >
-                <p>Create new playlist</p>
-              </TooltipContent>
-            </Tooltip>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon" className='cursor-pointer'>
+                  <PlusIcon />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" align="start">
+                <DropdownMenuLabel>
+                  <MATitle size='lg'>Create</MATitle>
+                </DropdownMenuLabel>
+                <DropdownMenuGroup>
+                  <DropdownMenuItem onSelect={() => openModal({type: "CREATE_PLAYLIST"})}>
+                    Playlist
+                    <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onSelect={() => openModal({type: "CREATE_FOLDER"})}>
+                    Folder
+                    <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </CardAction>
         </CardHeader>
         <CardContent className='flex flex-col overflow-hidden'>
@@ -86,7 +130,7 @@ const Library = () => {
           </ScrollArea>
         </CardContent>  
       </Card>
-    </TooltipProvider>
+    </>
   )
 }
 

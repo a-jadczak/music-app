@@ -1,22 +1,26 @@
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
-import { Check, PlusIcon } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import MATitle from '../text/MATitle'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select'
+import type { FC } from 'react'
 
-const MACreateCollectionModal = () => {
+interface ModalProps {
+  open: boolean
+  onOpenChange: (value: boolean) => void
+  children?: React.ReactNode
+}
+
+const MACreateCollectionModal: FC<ModalProps> = ({open, onOpenChange, children}) => {
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" size="icon" className='cursor-pointer'>
-          <PlusIcon />
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="sm:max-w-md"
+        onInteractOutside={(e) => e.preventDefault()} // block clicking out of modal
+      >
         <DialogHeader>
           <DialogTitle>
-            <MATitle>Create a new Folder, Playlist</MATitle>
+            <MATitle>{children}</MATitle>
           </DialogTitle>
           <Select>
             <SelectTrigger className="w-[180px]">
