@@ -7,8 +7,6 @@ import { Input } from '../../ui/input'
 import { Separator } from '../../ui/separator'
 import LibraryElement from '../listElements/LibraryElement'
 import { ScrollArea } from '../../ui/scroll-area'
-import MATitle from '../ui/text/MATitle'
-import MASecondaryText from '../ui/text/MASecondaryText'
 import { useReducer, useState, type ReactElement } from 'react'
 import MACreateCollectionModal from '../ui/modals/MACreateCollectionModal'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuShortcut, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
@@ -53,10 +51,10 @@ const Library = () => {
       <Card className='h-full'>
         <CardHeader>
           <CardTitle>
-            <MATitle>Library</MATitle>
+            <h2 className='title'>Library</h2>
           </CardTitle>
           <CardDescription>
-            <MASecondaryText>Home {">"} ...</MASecondaryText>
+            <span className='secondary'>Home {">"} ...</span>
           </CardDescription>
           <CardAction>
             <DropdownMenu>
@@ -67,7 +65,7 @@ const Library = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="start">
                 <DropdownMenuLabel>
-                  <MATitle size='lg'>Create</MATitle>
+                  <h3 className='title text-lg'>Create</h3>
                 </DropdownMenuLabel>
                 <DropdownMenuGroup>
                   <DropdownMenuItem onSelect={() => openModal({type: "CREATE_PLAYLIST"})}>

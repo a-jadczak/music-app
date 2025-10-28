@@ -1,5 +1,4 @@
 import { DialogClose, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
-import MATitle from '../../ui/text/MATitle'
 import { Input } from '@/components/ui/input'
 import { Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -10,7 +9,7 @@ const CreateFolderForm = () => {
     <>
       <DialogHeader>
         <DialogTitle>
-          <MATitle>Create Folder</MATitle>
+          <h3>Create Folder</h3>
         </DialogTitle>
       </DialogHeader>
       <div className="flex items-center gap-2">

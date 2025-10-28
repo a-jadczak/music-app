@@ -1,7 +1,5 @@
 import { CarouselItem } from '@/components/ui/carousel'
 import React from 'react'
-import MASmallAnchor from '../../ui/text/MASmallAnchor'
-import MATitle from '../../ui/text/MATitle'
 
 const CarouselAlbum = ({key}: {key: number}) => {
   return (
@@ -12,8 +10,8 @@ const CarouselAlbum = ({key}: {key: number}) => {
           alt="" 
           className='rounded-md mb-1.5'
         />
-        <MATitle size='xl' weight='normal'>Album Title</MATitle>
-        <MASmallAnchor>Author</MASmallAnchor>
+        <h3 className='title'>Album Title</h3>
+        <a href='#' className='anchor'>Author</a>
       </div>
     </CarouselItem>
   )

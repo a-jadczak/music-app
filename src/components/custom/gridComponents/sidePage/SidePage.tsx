@@ -1,7 +1,6 @@
 import { BookUserIcon, ListMusicIcon } from 'lucide-react'
 import Queue from './sidePages/Queue'
 import ArtistInfo from './sidePages/ArtistInfo'
-import MATitle from '../../ui/text/MATitle'
 import { useState } from 'react'
 import IconButton from './IconButton'
 
@@ -13,9 +12,9 @@ const SidePage = () => {
   return (
     <>
       <div className='flex w-full gap-4 px-4'>
-        <MATitle className='flex-1 ' weight='normal'>
+        <h2 className='title font-normal flex-1'>
           {view === "Queue" ? "Queue" : "Page Title"}
-        </MATitle>
+        </h2>
         <IconButton active={view === "ArtistInfo"} onClick={() => setView("ArtistInfo")}>
           <BookUserIcon/>
         </IconButton>

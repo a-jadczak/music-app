@@ -1,5 +1,4 @@
 import React from 'react'
-import MATitle from '../../ui/text/MATitle'
 
 const RecentlyListenedBlock = () => {
   return (
@@ -9,7 +8,7 @@ const RecentlyListenedBlock = () => {
         alt=''
         className='rounded-md'
       />
-      <MATitle size='xl' className='ml-3'>Title</MATitle>
+      <h3 className='title ml-3 text-xl'>Title</h3>
     </div>
   )
 }

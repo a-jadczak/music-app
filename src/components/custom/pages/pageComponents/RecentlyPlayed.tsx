@@ -1,11 +1,9 @@
 import React from 'react'
 import RecentlyPlayedBlock from './RecentlyListenedBlock'
-import MATitle from '../../ui/text/MATitle'
-
 const RecentlyPlayed = () => {
   return (
     <>
-      <MATitle size='4xl' weight='semibold' className='pl-4'>Recently Played</MATitle>
+      <h2 className='title pl-4 text-4xl'>Recently Played</h2>
       <div className='grid
         place-items-stretch
         lg:grid-cols-4

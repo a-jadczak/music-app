@@ -1,6 +1,4 @@
 import React from 'react'
-import MATitle from '../text/MATitle'
-import MASmallAnchor from '../text/MASmallAnchor'
 import { Ellipsis } from 'lucide-react'
 import MALike from '../buttons/MALike'
 import MAOptions from '../buttons/MAOptions'
@@ -19,8 +17,8 @@ const MASongItemShort = ({index} : {index: number} ) => {
           src='https://picsum.photos/300/300'
         />
         <div>
-          <MATitle size='lg'>Song name</MATitle>
-          <MASmallAnchor>Buckethead</MASmallAnchor>
+          <span className='text text-lg'>Song name</span>
+          <a href='#' className='anchor'>Buckethead</a>
         </div>
       </div>
       <div className='col-start-6 flex items-center'>

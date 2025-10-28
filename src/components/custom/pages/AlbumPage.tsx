@@ -1,6 +1,4 @@
 import React from 'react'
-import MATitle from '../ui/text/MATitle'
-import MASecondaryText from '../ui/text/MASecondaryText'
 import MAPlay from '../ui/buttons/MAPlay'
 import MALike from '../ui/buttons/MALike'
 import { Ellipsis, Timer } from 'lucide-react'
@@ -19,14 +17,14 @@ const AlbumPage = () => {
         </div>
 
         <div className='flex-3 flex flex-col justify-center gap-5'>
-          <MATitle size='md' className='pl-2'>Album</MATitle>
-          <MATitle size={'8xl'} weight='bold'>Colma</MATitle>
+          <h2 className='title pl-2 text-lg'>Album</h2>
+          <h2 className='title text-8xl'>Colma</h2>
           <div className='flex items-center gap-2'>
             <img src='https://picsum.photos/300/300' className='w-7.5 rounded-full'/>
             <a href='#' className='font-bold hover:underline'>Buckethead</a>
-            <MASecondaryText>• 1998 •</MASecondaryText>
-            <MASecondaryText> 13 songs •</MASecondaryText>
-            <MASecondaryText> 52 min 13 sec</MASecondaryText>
+            <span className='secondary'>• 1998 •</span>
+            <span className='secondary'> 13 songs •</span>
+            <span className='secondary'> 52 min 13 sec</span>
           </div>
         </div>
 
@@ -39,13 +37,13 @@ const AlbumPage = () => {
           <MAOptions/>
         </div>
         <div className='grid cols-16 p-1'>
-          <MASecondaryText className='flex justify-center -translate-x-2'>#</MASecondaryText>
-          <MASecondaryText className='col-span-9'>Title</MASecondaryText>
-          <MASecondaryText className='col-start-11 col-span-3 flex justify-end'>Plays</MASecondaryText>
+          <span className='secondary flex justify-center -translate-x-2'>#</span>
+          <span className='secondary col-span-9'>Title</span>
+          <span className='secondary col-start-11 col-span-3 flex justify-end'>Plays</span>
           <div className='col-start-14'></div>
-          <MASecondaryText className='col-start-15 flex items-center justify-end -translate-x-3'>
+          <div className='secondary col-start-15 flex items-center justify-end -translate-x-3'>
             <Timer size={20}/>
-          </MASecondaryText>
+          </div>
           <div className='col-start-16 '></div>
         </div>
         <Separator/>
@@ -63,8 +61,8 @@ const AlbumPage = () => {
           <MASongItem index={10}/>
         </div>
 
-        <MASecondaryText className=''>January 1, 1998</MASecondaryText>
-        <MATitle className='mt-2'>Discography</MATitle>
+        <p className='secondary'>January 1, 1998</p>
+        <h2 className='title mt-2'>Discography</h2>
         <MusicEntityCarousel title={''} musicEntity={'Artist'} />
       </div>
 

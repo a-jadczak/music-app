@@ -2,7 +2,6 @@ import React, { useCallback } from 'react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../../../ui/carousel'
 import type { MusicEntity } from '@/scripts/types/MusicEntity'
 import CarouselAlbum from '../carouselType/CarouselAlbum'
-import MATitle from '../../ui/text/MATitle'
 
 const MusicEntityCarousel = ({title, musicEntity}: {title: string, musicEntity: MusicEntity}) => {
 
@@ -13,7 +12,7 @@ const MusicEntityCarousel = ({title, musicEntity}: {title: string, musicEntity: 
   
   return (
     <>
-      <MATitle className='pl-4 mt-2 mb-2' weight='semibold'>{title}</MATitle>
+      <h2 className='title pl-4 mt-2 mb-2'>{title}</h2>
       <Carousel className='mb-10'>
         <CarouselContent className='pl-5 pr-5'>
           {render}

@@ -114,10 +114,56 @@
   * {
     @apply border-border outline-ring/50;
   }
+  *::selection {
+    @apply bg-transparent text-inherit;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
-  .grayed-text {
-    @apply text-neutral-400;
+
+}
+
+@layer components {
+  .btn-follow {
+
   }
+
+  .btn-like {
+
+  }
+
+  .btn-options {
+
+  }
+
+  .btn-play {
+
+  }
+
+  .btn-toggle {
+
+  }
+
+
+  .title {
+    @apply cursor-default text-2xl font-semibold;
+  }
+  
+  .text {
+    @apply cursor-default;
+  }
+
+  .secondary {
+    @apply cursor-default text-neutral-400;
+  }
+
+  .anchor {
+    @apply cursor-pointer text-neutral-400
+    hover:text-white hover:underline;
+  }
+}
+
+@layer utilities {
+  
 }

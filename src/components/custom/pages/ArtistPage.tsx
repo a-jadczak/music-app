@@ -1,6 +1,4 @@
 import React from 'react'
-import MATitle from '../ui/text/MATitle'
-import MASecondaryText from '../ui/text/MASecondaryText'
 import MAPlay from '../ui/buttons/MAPlay'
 import MALike from '../ui/buttons/MALike'
 import MAFollow from '../ui/buttons/MAFollow'
@@ -18,8 +16,8 @@ const ArtistPage = () => {
           alt="" 
         />
         <div className='p-5 absolute z-10 bottom-0'>
-          <MATitle weight='bold' className='text-8xl'>Buckethead</MATitle>
-          <MATitle weight='normal' size='lg' className='p-2'>30 000 followers</MATitle>
+          <h1 className='title font-bold text-8xl'>Buckethead</h1>
+          <h2 className='title text-lg p-2'>30 000 followers</h2>
         </div>
       </div>
 
@@ -28,7 +26,7 @@ const ArtistPage = () => {
           <MAPlay/>
           <MAFollow/>
         </div>
-        <MATitle weight='bold' className='mt-4'>Popular</MATitle>
+        <h3 className='title mt-4'>Popular</h3>
         <div className='mt-2'>
           <MASongItem index={1}/>
           <MASongItem index={2}/>
@@ -39,7 +37,7 @@ const ArtistPage = () => {
         </div>
         
         <div className='mt-6 flex'>
-          <MATitle weight='bold' className='flex-1'>Liked songs</MATitle>
+          <h3 className='title font-bold flex-1'>Liked songs</h3>
           <MATextToggle className={'mt-2 ml-2 inline'}>Show All</MATextToggle>
         </div>
         <div className='flex items-center gap-4 mt-3'>
@@ -48,15 +46,15 @@ const ArtistPage = () => {
               alt="" 
               className='rounded-full w-25'
             />
-            <MALike className="absolute bottom-0 right-0" liked={true} size={5}/>
+            <MALike className="absolute bottom-0 right-0" liked={true}/>
           </div>
           <div>
-            <MATitle size='xl'>You've liked X songs</MATitle>
-            <MASecondaryText>By Buckethead</MASecondaryText>
+            <p className='title text-xl'>You've liked X songs</p>
+            <span className='secondary'>By Buckethead</span>
           </div>
         </div>  
       </div>
-      <MATitle className='ml-3'>Discography</MATitle>
+      <h3 className='title ml-3'>Discography</h3>
       <MusicEntityCarousel title={''} musicEntity={'Artist'}/>
       
     </>

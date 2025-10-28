@@ -1,5 +1,4 @@
 import { DialogClose, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
-import MATitle from '../../ui/text/MATitle'
 import { Input } from '@/components/ui/input'
 import { Check, Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -14,7 +13,7 @@ const CreatePlaylistForm = () => {
     <>
       <DialogHeader>
         <DialogTitle>
-          <MATitle>Create Playlist</MATitle>
+          <h3>Create Playlist</h3>
         </DialogTitle>
       </DialogHeader>
       <div className="flex items-center gap-2">

@@ -1,8 +1,6 @@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import MATitle from '../text/MATitle'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import MASecondaryText from '../text/MASecondaryText'
 
 const MACreditModal = () => {
   return (
@@ -13,22 +11,22 @@ const MACreditModal = () => {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>
-            <MATitle>Credits</MATitle>
+            <h2 className='title'>Credits</h2>
           </DialogTitle>
           <Separator/>
 
-          <MATitle size='xl'>Title</MATitle>
+          <h3 className='title text-xl'>Title</h3>
           <div>
-            <MATitle size='md'>Performed by</MATitle>
-            <MASecondaryText>Buckethead</MASecondaryText>
+            <h4 className='title text-lg'>Performed by</h4>
+            <span className='secondary'>Buckethead</span>
           </div>
           <div>
-            <MATitle size='md'>Written by</MATitle>
-            <MASecondaryText>Buckethead</MASecondaryText>
+            <h4 className='title text-lg'>Written by</h4>
+            <span className='secondary'>Buckethead</span>
           </div>
           <div>
-            <MATitle size='md'>Produced by</MATitle>
-            <MASecondaryText>-</MASecondaryText>
+            <h4 className='title text-lg'>Produced by</h4>
+            <span className='secondary'>-</span>
           </div>
         </DialogHeader>
       </DialogContent>
