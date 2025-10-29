@@ -12,7 +12,7 @@ const MusicEntityCarousel = ({title, musicEntity}: {title: string, musicEntity: 
   
   return (
     <>
-      <h2 className='title pl-4 mt-2 mb-2'>{title}</h2>
+      <h3 className='title pl-4 mt-2 mb-2'>{title}</h3>
       <Carousel className='mb-10'>
         <CarouselContent className='pl-5 pr-5'>
           {render}

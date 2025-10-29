@@ -10,7 +10,7 @@ const CarouselArtist = ({ key }: { key: number }) => {
           alt=""
           className='rounded-full'
         />
-        <h3 className='title text-xl'>Album Title</h3>
+        <h4 className='title text-xl'>Album Title</h4>
         <span className='secondary'>Author</span>
       </div>
     </CarouselItem>

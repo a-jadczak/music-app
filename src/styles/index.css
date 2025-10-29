@@ -154,8 +154,12 @@
     @apply cursor-default;
   }
 
-  .description::selection {
-    @apply bg-blue-500 text-white;
+  .description::selection, .secondary-description::selection {
+    @apply bg-blue-500 text-white cursor-auto;
+  }
+
+  .secondary-description {
+    @apply text-neutral-400;
   }
 
   .secondary {

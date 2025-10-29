@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Ellipsis } from 'lucide-react'
 import MALike from '../buttons/MALike'
 import MAOptions from '../buttons/MAOptions'
 
 const MASongItem = ({index} : {index: number} ) => {
+  const [liked, setLiked] = useState<boolean>(true);
+
   return (
-    <div className='grid 
-    grid-cols-16
+    <div className='grid grid-cols-16
+    group
     w-full gap-4 rounded p-1
-      hover:bg-neutral-700
+    hover:bg-neutral-700
     '>
       <div className='px-2 flex items-center'>
         <span className='text text-lg w-full text-center'>{index}</span>
@@ -26,13 +28,14 @@ const MASongItem = ({index} : {index: number} ) => {
       <div className='col-start-11 col-span-3 flex items-center justify-end'>
         <span className='text -translate-y-0.5'>300 000</span>
       </div>
-      <div className='col-start-14 flex items-center justify-end'>
-        <MALike liked={false} className="size-5"/>
+      <div className={`col-start-14 flex items-center justify-end
+        ${!liked && "invisible group-hover:visible"}`}>
+        <MALike liked={liked} className="size-5"/>
       </div>
       <div className='col-start-15 flex items-center justify-end'>
         <span className='text -translate-y-0.5'>3:57</span>
       </div>
-      <div className='col-start-16 flex items-center justify-center'>
+      <div className='col-start-16 invisible flex items-center justify-center group-hover:visible'>
         <MAOptions/>
       </div>
     </div>

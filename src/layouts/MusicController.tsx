@@ -1,8 +1,10 @@
 import React from 'react'
-import { Album, ListMusicIcon, PauseIcon, PlayIcon, Settings, SkipBack, SkipForward, VolumeIcon, VolumeXIcon } from 'lucide-react'
+import { ListMusicIcon, PauseIcon, PlayIcon, Settings, SkipBack, SkipForward, VolumeXIcon } from 'lucide-react'
 import { Progress } from "@/components/ui/shadcn/ui/progress"
 import { Slider } from "@/components/ui/shadcn/ui/slider"
 import MAPlay from '@/components/ui/MA/buttons/MAPlay'
+import Album from '@/components/musicContent/Album'
+
 const MusicController = () => {
   return (
     <footer className='flex justify-between p-3'>

@@ -1,11 +1,10 @@
 import React from 'react'
-import CarouselAlbum from '../components/Carousels/Carousels/CarouselAlbum'
-import MusicEntityCarousel from '../components/Carousels/MusicEntityCarousel'
 import MAFollow from '@/components/ui/MA/buttons/MAFollow'
 import MASongItem from '@/components/ui/MA/item/MASongItem'
 import MALike from '@/components/ui/MA/buttons/MALike'
 import MAPlay from '@/components/ui/MA/buttons/MAPlay'
 import MATextToggle from '@/components/ui/MA/buttons/MATextToggle'
+import MusicEntityCarousel from '@/components/Carousels/MusicEntityCarousel'
 const ArtistPage = () => {
   return (
     <>
@@ -53,8 +52,7 @@ const ArtistPage = () => {
           </div>
         </div>  
       </div>
-      <h3 className='title ml-3'>Discography</h3>
-      <MusicEntityCarousel title={''} musicEntity={'Artist'}/>
+      <MusicEntityCarousel title={'Discography'} musicEntity={'Artist'}/>
       
     </>
   )
