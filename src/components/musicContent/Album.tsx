@@ -1,19 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 const Album = () => {
   return (
-    <div className='row-span-2 max-w-13 flex items-center'>
-      <img 
-        src="https://picsum.photos/300/300" 
-        alt="" 
-        className='rounded-md'
-      />
-      <div className='ml-3 flex flex-col'>
-        <h3 className='title text-lg'>Colma</h3>
-        <p className='secondary'>Buckethead</p>
+    <div className="row-span-2 max-w-13 flex items-center">
+      <img src="https://picsum.photos/300/300" alt="" className="rounded-md" />
+      <div className="ml-3 flex flex-col">
+        <h3 className="title text-xl">Colma</h3>
+        <p className="secondary">Buckethead</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Album
+export default Album;
