@@ -36,7 +36,6 @@ const ArtistPage = () => {
         
         <div className='mt-6 flex'>
           <h3 className='title font-bold flex-1'>Liked songs</h3>
-          <a href='#' className={'anchor mt-2 ml-2 inline'}>Show All</a>
         </div>
         <div className='flex items-center gap-4 mt-3'>
           <div className='relative'>

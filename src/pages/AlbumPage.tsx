@@ -28,7 +28,7 @@ const AlbumPage = () => {
 
       </div>
 
-      <div className='p-4'>
+      <div className='p-2'>
         <div className='flex items-center gap-4 w-full p-3'>
           <MAPlay/>
           <MALike liked={false} className={'size-8'}/>
@@ -59,10 +59,10 @@ const AlbumPage = () => {
           <MASongItem index={10}/>
         </div>
 
-        <p className='secondary'>January 1, 1998</p>
-        <h2 className='title mt-2'>Discography</h2>
-        <MusicEntityCarousel title={''} musicEntity={'Artist'} />
+        <p className='secondary ml-2'>January 1, 1998</p>
       </div>
+      
+      <MusicEntityCarousel title={'Discography'} musicEntity={'Artist'} />
 
     </div>
   )

@@ -1,6 +1,6 @@
 import { BookUserIcon, ListMusicIcon } from 'lucide-react'
-import Queue from './SubPages/Queue'
-import ArtistInfo from './SubPages/ArtistInfo'
+import Queue from './SubPages/Queue/Queue'
+import SongInfo from './SubPages/ArtistInfo/SongInfo'
 import { useState } from 'react'
 import IconButton from './IconButton'
 
@@ -23,7 +23,7 @@ const SidePage = () => {
         </IconButton>
       </div>
       
-      {view === "ArtistInfo" && <ArtistInfo/>}
+      {view === "ArtistInfo" && <SongInfo/>}
       {view === "Queue" && <Queue/>}
     </>
   )
