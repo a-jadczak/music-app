@@ -1,15 +1,23 @@
-import { PauseIcon, PlayIcon } from 'lucide-react'
-import React from 'react'
+import { PauseIcon, PlayIcon } from 'lucide-react';
+import React from 'react';
 
-const MAPlay = () => {
+const MAPlay = ({
+  className,
+  onClick,
+}: {
+  className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}) => {
   return (
-    <button className='bg-white rounded-full p-2 cursor-pointer
-      hover:scale-105
-      '>
-        <PlayIcon fill='full' size={30}/>
-      {/* <PauseIcon fill='full' size={30}/> */}
+    <button
+      className={`bg-white rounded-full p-2 cursor-pointer
+      hover:scale-105 ${className} transition`}
+      onClick={onClick}
+    >
+      <PlayIcon fill="full" />
+      {/* <PauseIcon fill='full'/> */}
     </button>
-  )
-}
+  );
+};
 
-export default MAPlay
+export default MAPlay;
