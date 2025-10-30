@@ -9,7 +9,7 @@ import SidePage from './layouts/SidePage/SidePage';
 import AlbumPage from './pages/AlbumPage';
 import ArtistPage from './pages/ArtistPage/ArtistPage';
 import MainPage from './pages/MainPage/MainPage';
-import SearchPage from './pages/SearchPage';
+import SearchPage from './pages/SearchPage/SearchPage';
 
 function App() {
   return (

@@ -1,4 +1,5 @@
 import MAPlay from '@/components/ui/MA/buttons/MAPlay';
+import MAQuickPlay from '@/components/ui/MA/buttons/MAQuickPlay';
 import { CarouselItem } from '@/components/ui/shadcn/ui/carousel';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -16,13 +17,7 @@ const CarouselAlbum = ({ key }: { key: number }) => {
       <div className="p-2 rounded-md hover:bg-neutral-800 transition">
         <div className="group relative">
           <img src="https://picsum.photos/300/300" alt="" className="rounded-md mb-1.5" />
-          <MAPlay
-            onClick={(e) => e.stopPropagation()}
-            className="absolute right-2 bottom-2
-            opacity-0 translate-x-2
-            group-hover:opacity-100
-            group-hover:translate-x-0"
-          />
+          <MAQuickPlay className="bottom-2" />
         </div>
         <div>
           <Link

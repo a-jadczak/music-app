@@ -1,5 +1,4 @@
-import MAPlay from '@/components/ui/MA/buttons/MAPlay';
-import React from 'react';
+import MAQuickPlay from '@/components/ui/MA/buttons/MAQuickPlay';
 
 const RecentlyListenedBlock = () => {
   return (
@@ -14,12 +13,7 @@ const RecentlyListenedBlock = () => {
     >
       <img src="https://picsum.photos/50/50" alt="" className="rounded-md" />
       <h3 className="title ml-3 text-xl cursor-pointer">Title</h3>
-      <MAPlay
-        className="absolute right-2 
-        opacity-0 translate-x-2
-        group-hover:opacity-100
-        group-hover:translate-x-0"
-      />
+      <MAQuickPlay />
     </div>
   );
 };

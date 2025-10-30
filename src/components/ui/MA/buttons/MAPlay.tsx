@@ -1,3 +1,4 @@
+import Play from '@/components/Icons/Play';
 import { PauseIcon, PlayIcon } from 'lucide-react';
 import React from 'react';
 
@@ -14,7 +15,7 @@ const MAPlay = ({
       hover:scale-105 ${className} transition`}
       onClick={onClick}
     >
-      <PlayIcon fill="full" />
+      <Play color="black" />
       {/* <PauseIcon fill='full'/> */}
     </button>
   );
