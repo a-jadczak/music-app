@@ -7,8 +7,8 @@ const OtherResults = () => {
       <h2 className="title font-bold mb-2">Songs</h2>
       <div className="flex flex-col gap-1 flex-1">
         <MASongItem index={0} />
-        <MASongItem index={10} />
-        <MASongItem index={100} />
+        <MASongItem index={0} />
+        <MASongItem index={0} />
         <MASongItem index={0} />
       </div>
     </div>

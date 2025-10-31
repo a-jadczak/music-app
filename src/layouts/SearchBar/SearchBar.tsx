@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Home, SearchIcon } from 'lucide-react';
 import SearchContent from './SearchContent';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const SearchBar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [active, setActive] = useState<boolean>(false);
   const [mainPage, setMainPage] = useState<boolean>(false); // TODO: Add checking Page url logic
 
@@ -11,10 +15,11 @@ const SearchBar = () => {
       <div className="relative flex items-center">
         <div
           className={`absolute flex items-center justify-center  
-        -ml-12 cursor-pointer border-2 rounded-full size-10 text-neutral-500
+        -ml-12 cursor-pointer border-2 rounded-full size-10 text-neutral-500 transition
         hover:text-white hover:border-white
-        ${mainPage ? 'text-white border-white' : ''}
+        ${location.pathname === '/' ? 'text-white border-white' : ''}
         `}
+          onClick={() => navigate('/')}
         >
           <Home size={20} />
         </div>
