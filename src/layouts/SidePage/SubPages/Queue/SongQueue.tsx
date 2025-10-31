@@ -1,6 +1,6 @@
-import LibraryElement from "@/components/listElements/LibraryElement";
-import { ScrollArea } from "@/components/ui/shadcn/ui/scroll-area";
-import React from "react";
+import LibraryElement from '@/components/Items/LibraryElement';
+import { ScrollArea } from '@/components/ui/shadcn/ui/scroll-area';
+import React from 'react';
 
 const SongQueue = () => {
   return (

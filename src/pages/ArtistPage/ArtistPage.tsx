@@ -1,10 +1,10 @@
 import React from 'react';
-import MAFollow from '@/components/ui/MA/buttons/MAFollow';
 import MASongItem from '@/components/ui/MA/item/MASongItem';
 import MALike from '@/components/ui/MA/buttons/MALike';
 import MAPlay from '@/components/ui/MA/buttons/MAPlay';
 import MATextToggle from '@/components/ui/MA/buttons/MATextToggle';
 import MusicEntityCarousel from '@/components/Carousels/MusicEntityCarousel';
+import MAToggle from '@/components/ui/MA/buttons/MAToggle';
 const ArtistPage = () => {
   return (
     <>
@@ -19,7 +19,7 @@ const ArtistPage = () => {
       <div className="p-4">
         <div className="flex items-center gap-2">
           <MAPlay />
-          <MAFollow />
+          <MAToggle onContent="Unfollow" offContent="Follow" />
         </div>
         <h3 className="title mt-4">Popular</h3>
         <div className="mt-2">

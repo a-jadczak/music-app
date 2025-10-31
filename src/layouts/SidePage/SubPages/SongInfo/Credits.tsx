@@ -1,12 +1,12 @@
-import MAFollow from "@/components/ui/MA/buttons/MAFollow";
-import MACreditModal from "@/components/ui/MA/modals/MACreditModal";
+import MAToggle from '@/components/ui/MA/buttons/MAToggle';
+import MACreditModal from '@/components/ui/MA/modals/MACreditModal';
 import {
   Card,
   CardAction,
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/components/ui/shadcn/ui/card";
+} from '@/components/ui/shadcn/ui/card';
 
 const Credits = () => {
   return (
@@ -29,7 +29,7 @@ const Credits = () => {
               </a>
             </div>
             <div>
-              <MAFollow />
+              <MAToggle onContent="Unfollow" offContent="Follow" />
             </div>
           </div>
         </CardContent>

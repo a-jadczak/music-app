@@ -1,6 +1,9 @@
 import MAQuickPlay from '@/components/ui/MA/buttons/MAQuickPlay';
+import { useNavigate } from 'react-router-dom';
 
 const RecentlyListenedBlock = () => {
+  const navigate = useNavigate();
+
   return (
     <div
       className="flex items-center bg-neutral-800 rounded-md 
@@ -8,8 +11,8 @@ const RecentlyListenedBlock = () => {
       hover:shadow-xs
       hover:scale-105
       hover:ring-1
-      group
-      "
+      group"
+      onClick={() => navigate('/album')}
     >
       <img src="https://picsum.photos/50/50" alt="" className="rounded-md" />
       <h3 className="title ml-3 text-xl cursor-pointer">Title</h3>

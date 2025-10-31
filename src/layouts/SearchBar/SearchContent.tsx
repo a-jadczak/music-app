@@ -1,4 +1,4 @@
-import LibraryElement from '@/components/listElements/LibraryElement';
+import LibraryElement from '@/components/Items/LibraryElement';
 import { ScrollArea } from '@/components/ui/shadcn/ui/scroll-area';
 import { Separator } from '@/components/ui/shadcn/ui/separator';
 import React from 'react';
