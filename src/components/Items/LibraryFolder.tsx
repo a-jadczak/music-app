@@ -1,29 +1,78 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Album from '../musicContent/Album';
-import { ChevronDown, ChevronUp, Folder } from 'lucide-react';
+import { ChevronDown, ChevronRight, ChevronUp, Folder } from 'lucide-react';
 import MAToggle from '../ui/MA/buttons/MAToggle';
+import { ReactSortable } from 'react-sortablejs';
+import LibraryElement from './LibraryElement';
+import LibraryItem from './LibraryItem';
+import type { ParentId } from '@/types/Library/ParentId';
 
-const LibraryFolder = ({ index, children }: { index: number; children: React.ReactNode }) => {
+const LibraryFolder = ({
+  children,
+  parentId,
+}: {
+  children: React.ReactNode;
+  parentId: ParentId;
+}) => {
+  const [hidden, setHidden] = useState(false);
+
+  const dropSpaceRef = useRef<HTMLDivElement | null>(null);
+
+  const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropSpaceRef.current!.style.backgroundColor = 'green';
+  };
+
+  const onDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropSpaceRef.current!.style.backgroundColor = 'gray';
+  };
+
   return (
     <>
-      <div className="flex rounded-lg p-1.5 border-1 items-center mb-2 cursor-pointer">
+      <div draggable={true} className="flex flex-col rounded-lg p-1.5 border-1 mb-2 cursor-pointer">
         <div className="flex items-stretch w-full">
           {/* <img src="https://picsum.photos/300/300" alt="" className="rounded-md" /> */}
           <div className="bg-neutral-800 flex-2 rounded-md">
             <Folder className="size-full p-3" />
           </div>
           <div className="ml-3 flex flex-col flex-6">
-            <h3 className="title text-xl">Colma</h3>
-            <p className="secondary">Buckethead</p>
+            <h3 className="title text-xl">Folder</h3>
+            <p className="secondary">0 playlists</p>
           </div>
           <div className="flex-1 flex items-center justify-center text-gray-400">
             <MAToggle
-              onContent={<ChevronUp />}
+              onContent={<ChevronRight />}
               offContent={<ChevronDown />}
+              onActive={() => setHidden((prev) => (prev = !prev))}
+              offActive={() => setHidden((prev) => (prev = !prev))}
               className="hover:text-white"
               button={false}
             />
           </div>
+        </div>
+        <div
+          className="ml-2 mt-2"
+          ref={dropSpaceRef}
+          onDragOver={(e) => {
+            console.log('Hover');
+            e.preventDefault();
+            onDragOver(e);
+          }}
+          onDragEnd={(e) => onDragLeave(e)}
+          onDragLeave={(e) => {
+            onDragLeave(e);
+          }}
+          onDrop={(e) => {
+            e.preventDefault();
+            console.log('Dropped');
+
+            console.log(e.dataTransfer.getData('my/parentId'));
+          }}
+        >
+          <div className={hidden ? 'hidden' : ''}>{children}</div>
         </div>
       </div>
     </>

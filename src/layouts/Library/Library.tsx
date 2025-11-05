@@ -36,7 +36,8 @@ import MACreateCollectionModal from '@/components/ui/MA/modals/MACreateCollectio
 import LibraryElement from '@/components/Items/LibraryElement';
 import { ReactSortable } from 'react-sortablejs';
 import LibraryFolder from '@/components/Items/LibraryFolder';
-import LibraryItem from '@/components/Items/LibraryItem';
+import FolderRenderer from './FolderRenderer';
+import type { LibraryItem } from '@/types/Library/LibraryItem';
 
 type ModalAction = { type: 'CREATE_PLAYLIST' } | { type: 'CREATE_FOLDER' };
 
@@ -65,18 +66,20 @@ const Library = () => {
     dispatch(value);
   };
 
-  //
-  const [temp, setTemp] = useState([
-    {
-      id: 1,
-      name: 'shrek',
-      items: [
-        { id: 1, name: "shrek's child" },
-        { id: 2, name: "shrek's child 2" },
-      ],
-    },
-    { id: 2, name: 'fiona', items: [{ id: 1, name: "fiona's child" }] },
-    { id: 3, name: 'donkey', items: [] },
+  const [list, setList] = useState<LibraryItem[]>([
+    { id: 1, name: 'Folder A', parentId: null, isFolder: true },
+    { id: 2, name: 'Folder AA', parentId: 1, isFolder: true },
+    { id: 3, name: 'File AAA', parentId: 2, isFolder: false },
+    { id: 4, name: 'Folder AB', parentId: 1, isFolder: true },
+    { id: 5, name: 'Folder ABA', parentId: 4, isFolder: true },
+    { id: 6, name: 'Folder ABAA', parentId: 5, isFolder: true },
+    { id: 7, name: 'File ABAA', parentId: 6, isFolder: false },
+    { id: 8, name: 'Folder ABB', parentId: 4, isFolder: true },
+    { id: 9, name: 'File ABBA', parentId: 8, isFolder: false },
+    { id: 10, name: 'Folder B', parentId: null, isFolder: true },
+    { id: 11, name: 'File BA', parentId: 10, isFolder: false },
+    { id: 12, name: 'File BB', parentId: 10, isFolder: false },
+    { id: 13, name: 'File', parentId: null, isFolder: false },
   ]);
 
   return (
@@ -150,37 +153,7 @@ const Library = () => {
           <Separator className="mt-5 mb-3" />
 
           <ScrollArea className="flex-1 overflow-auto">
-            <ReactSortable list={temp} setList={setTemp} animation={150} group="parent">
-              <LibraryFolder index={1}> </LibraryFolder>
-              <LibraryItem index={2} />
-              <LibraryItem index={2} />
-              {/* {temp.map((item) => (
-                <>
-                  {item.items ? (
-                    <LibraryFolder index={item.id}>
-                      {item.items && (
-                        <ReactSortable
-                          list={item.items}
-                          setList={(newList) =>
-                            setTemp((prev) =>
-                              prev.map((p) => (p.id === item.id ? { ...p, items: newList } : p)),
-                            )
-                          }
-                          group={{ name: 'nested', pull: true, put: true }}
-                          animation={150}
-                        >
-                          {item.items.map((subItem: any) => (
-                            <LibraryElement index={subItem.id} key={subItem.id} />
-                          ))}
-                        </ReactSortable>
-                      )}
-                    </LibraryFolder>
-                  ) : (
-                    <LibraryItem index={item.id} key={item.id} />
-                  )}
-                </>
-              ))} */}
-            </ReactSortable>
+            <FolderRenderer list={list} />
           </ScrollArea>
         </CardContent>
       </Card>

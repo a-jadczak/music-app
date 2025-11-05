@@ -6,10 +6,27 @@ interface MAToggleProps {
   offContent: React.ReactNode;
   className?: string;
   button?: boolean;
+  onActive?: () => void;
+  offActive?: () => void;
 }
 
-const MAToggle: React.FC<MAToggleProps> = ({ onContent, offContent, className, button = true }) => {
+const MAToggle: React.FC<MAToggleProps> = ({
+  onContent,
+  offContent,
+  className,
+  button = true,
+  onActive,
+  offActive,
+}) => {
   const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    const next = !isActive;
+    setIsActive(next);
+    next ? onActive?.() : offActive?.();
+  };
+
+  const content = isActive ? onContent : offContent;
 
   return button ? (
     <Button
@@ -18,12 +35,12 @@ const MAToggle: React.FC<MAToggleProps> = ({ onContent, offContent, className, b
           ? 'border-2 bg-card text-white hover:bg-card'
           : 'bg-white text-black hover:bg-white/80'
       } ${className ?? ''}`}
-      onClick={() => setIsActive(!isActive)}
+      onClick={handleClick}
     >
-      {isActive ? onContent : offContent}
+      {content}
     </Button>
   ) : (
-    <div onClick={() => setIsActive(!isActive)}>{isActive ? onContent : offContent}</div>
+    <div onClick={handleClick}>{content}</div>
   );
 };
 

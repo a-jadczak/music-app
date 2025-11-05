@@ -1,7 +1,7 @@
 import SearchBar from '@/layouts/SearchBar/SearchBar';
 import { ThemeProvider } from './components/ui/shadcn/ui/theme-provider';
 import MusicController from '@/layouts/MusicController';
-import Library from '@/layouts/Library';
+import Library from '@/layouts/Library/Library';
 import { ScrollArea } from '@/components/ui/shadcn/ui/scroll-area';
 import { Route, Routes } from 'react-router-dom';
 import { Card } from '@/components/ui/shadcn/ui/card';
