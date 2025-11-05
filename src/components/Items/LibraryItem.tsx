@@ -1,9 +1,7 @@
 import { useRef, useState } from 'react';
 import Album from '../musicContent/Album';
-import type { ParentId } from '@/types/Library/ParentId';
 
-const LibraryItem = ({ name, parentId: id }: { name: string; parentId: ParentId }) => {
-  const [parentId, setParentId] = useState<ParentId>(id);
+const LibraryItem = ({ name, id }: { name: string; id: number }) => {
   const ref = useRef(null);
 
   return (
@@ -12,7 +10,8 @@ const LibraryItem = ({ name, parentId: id }: { name: string; parentId: ParentId 
       draggable={true}
       onDragStart={(e) => {
         e.persist();
-        e.dataTransfer.setData('my/parentId', `${parentId}`);
+
+        e.dataTransfer.setData('my/id', `${id}`);
       }}
       className="flex rounded-lg p-1 border-1 items-center mb-2 hover:cursor-pointer"
     >

@@ -67,19 +67,12 @@ const Library = () => {
   };
 
   const [list, setList] = useState<LibraryItem[]>([
-    { id: 1, name: 'Folder A', parentId: null, isFolder: true },
-    { id: 2, name: 'Folder AA', parentId: 1, isFolder: true },
-    { id: 3, name: 'File AAA', parentId: 2, isFolder: false },
-    { id: 4, name: 'Folder AB', parentId: 1, isFolder: true },
-    { id: 5, name: 'Folder ABA', parentId: 4, isFolder: true },
-    { id: 6, name: 'Folder ABAA', parentId: 5, isFolder: true },
-    { id: 7, name: 'File ABAA', parentId: 6, isFolder: false },
-    { id: 8, name: 'Folder ABB', parentId: 4, isFolder: true },
-    { id: 9, name: 'File ABBA', parentId: 8, isFolder: false },
-    { id: 10, name: 'Folder B', parentId: null, isFolder: true },
-    { id: 11, name: 'File BA', parentId: 10, isFolder: false },
-    { id: 12, name: 'File BB', parentId: 10, isFolder: false },
-    { id: 13, name: 'File', parentId: null, isFolder: false },
+    { id: 1, name: 'Folder A', parentId: null, order: 0, isFolder: true },
+    { id: 3, name: 'File A', parentId: 1, order: 1, isFolder: false },
+    { id: 5, name: 'Folder AA', parentId: 1, order: 0, isFolder: true },
+    { id: 6, name: 'File AAA', parentId: 5, order: 0, isFolder: false },
+    { id: 2, name: 'Folder B', parentId: null, order: 1, isFolder: true },
+    { id: 4, name: 'File B', parentId: 2, order: 0, isFolder: false },
   ]);
 
   return (

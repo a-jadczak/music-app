@@ -1,19 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Album from '../musicContent/Album';
 import { ChevronDown, ChevronRight, ChevronUp, Folder } from 'lucide-react';
 import MAToggle from '../ui/MA/buttons/MAToggle';
-import { ReactSortable } from 'react-sortablejs';
-import LibraryElement from './LibraryElement';
-import LibraryItem from './LibraryItem';
 import type { ParentId } from '@/types/Library/ParentId';
+import { useFolderStore } from '@/store/useFolderStore';
 
-const LibraryFolder = ({
-  children,
-  parentId,
-}: {
-  children: React.ReactNode;
-  parentId: ParentId;
-}) => {
+const LibraryFolder = ({ children, id: folderId }: { children: React.ReactNode; id: number }) => {
+  const { moveItem, removeItem } = useFolderStore();
+
   const [hidden, setHidden] = useState(false);
 
   const dropSpaceRef = useRef<HTMLDivElement | null>(null);
@@ -28,6 +21,16 @@ const LibraryFolder = ({
     e.preventDefault();
     e.stopPropagation();
     dropSpaceRef.current!.style.backgroundColor = 'gray';
+  };
+
+  const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const id = Number.parseInt(e.dataTransfer.getData('my/id'));
+    moveItem(id, folderId);
+
+    onDragLeave(e);
   };
 
   return (
@@ -54,23 +57,12 @@ const LibraryFolder = ({
           </div>
         </div>
         <div
-          className="ml-2 mt-2"
+          className="ml-2 mt-2 p-3"
           ref={dropSpaceRef}
-          onDragOver={(e) => {
-            console.log('Hover');
-            e.preventDefault();
-            onDragOver(e);
-          }}
+          onDragOver={(e) => onDragOver(e)}
           onDragEnd={(e) => onDragLeave(e)}
-          onDragLeave={(e) => {
-            onDragLeave(e);
-          }}
-          onDrop={(e) => {
-            e.preventDefault();
-            console.log('Dropped');
-
-            console.log(e.dataTransfer.getData('my/parentId'));
-          }}
+          onDragLeave={(e) => onDragLeave(e)}
+          onDrop={(e) => onDrop(e)}
         >
           <div className={hidden ? 'hidden' : ''}>{children}</div>
         </div>
