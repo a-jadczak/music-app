@@ -7,6 +7,7 @@ interface FolderState {
   list: LibraryItemType[];
   // tree hierarchy for structured data
   tree: LibraryItemType[];
+  isItemDragged: boolean;
   setList: (list: LibraryItemType[]) => void;
   // Builds a tree structured list from a flat list
   buildTree: (items: LibraryItemType[], parentId?: ParentId) => LibraryItemType[];
@@ -19,6 +20,7 @@ interface FolderState {
 export const useFolderStore = create<FolderState>((set, get) => ({
   list: [],
   tree: [],
+  isItemDragged: true,
   setList: (list) => {
     const newTree = get().buildTree(list);
     set({ tree: newTree, list: list });

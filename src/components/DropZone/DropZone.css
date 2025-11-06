@@ -1,0 +1,20 @@
+.drop-zone {
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0px,
+    transparent 2.5px,
+    #FFF 2.5px,
+    #FFF 5px
+  );
+  background-size: 200% 200%;
+  animation: moveStripes 15s linear infinite reverse;
+}
+
+@keyframes moveStripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}

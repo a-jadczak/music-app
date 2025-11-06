@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import './DropZone.css';
 
 const DropZone = ({
   onDrop: onDropCB,
@@ -6,7 +7,7 @@ const DropZone = ({
   children,
 }: {
   onDrop: (e: React.DragEvent<HTMLDivElement>) => void;
-  className: string;
+  className?: string;
   children: React.ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -14,12 +15,12 @@ const DropZone = ({
   const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    ref.current!.style.backgroundColor = 'green';
+    ref.current!.classList.add('drop-zone');
   };
 
   const onDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
     e.stopPropagation();
-    ref.current!.style.backgroundColor = 'gray';
+    ref.current!.classList.remove('drop-zone');
   };
 
   const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
@@ -32,7 +33,7 @@ const DropZone = ({
   return (
     <div
       ref={ref}
-      className={className}
+      className={`rounded-sm h-full ${className}`}
       onDragOver={(e) => onDragOver(e)}
       onDragLeave={(e) => onDragLeave(e)}
       onDrop={(e) => onDrop(e)}

@@ -2,8 +2,8 @@ import { useRef } from 'react';
 
 export const useDraggable = (id: number) => {
   const ref = useRef<HTMLDivElement>(null);
-
-  const draggableProps = {
+  
+  const draggable = {
     draggable: true,
     ref,
     onDragStart: (e: React.DragEvent<HTMLDivElement>) => {
@@ -12,5 +12,5 @@ export const useDraggable = (id: number) => {
     },
   };
 
-  return draggableProps;
+  return {draggable };
 };

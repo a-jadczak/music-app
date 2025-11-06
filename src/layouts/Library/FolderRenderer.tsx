@@ -1,6 +1,7 @@
 import DropZone from '@/components/DropZone/DropZone';
 import LibraryFolder from '@/components/Items/LibraryFolder';
 import LibraryItem from '@/components/Items/LibraryItem';
+import { ScrollArea } from '@/components/ui/shadcn/ui/scroll-area';
 import { useFolderStore } from '@/store/useFolderStore';
 import type { LibraryItem as LibraryItemType } from '@/types/Library/LibraryItem';
 import { useEffect } from 'react';
@@ -28,8 +29,10 @@ const FolderRenderer = ({ list }: { list: LibraryItemType[] }) => {
   };
 
   return (
-    <DropZone onDrop={onDrop} className={''}>
-      {tree.map((e) => renderTree(e))}
+    <DropZone onDrop={onDrop}>
+      <ScrollArea className="flex-1 overflow-auto h-full">
+        {tree.map((e) => renderTree(e))}
+      </ScrollArea>
     </DropZone>
   );
 };

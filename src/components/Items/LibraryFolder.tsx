@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ChevronRight, Folder } from 'lucide-react';
 import MAToggle from '../ui/MA/buttons/MAToggle';
 import { useFolderStore } from '@/store/useFolderStore';
@@ -7,9 +7,9 @@ import { useDraggable } from '@/hooks/useDraggable';
 
 const LibraryFolder = ({ children, id: folderId }: { children: React.ReactNode; id: number }) => {
   const { moveItem } = useFolderStore();
-  const draggable = useDraggable(folderId);
+  const { draggable } = useDraggable(folderId);
 
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
     const id = Number.parseInt(e.dataTransfer.getData('my/id'));
@@ -18,7 +18,10 @@ const LibraryFolder = ({ children, id: folderId }: { children: React.ReactNode; 
 
   return (
     <>
-      <div {...draggable} className="flex flex-col rounded-lg p-1.5 border-1 mb-2 cursor-pointer">
+      <div
+        {...draggable}
+        className="flex flex-col rounded-lg bg-card p-1.5 border-1 mb-2 cursor-pointer"
+      >
         <div className="flex items-stretch w-full">
           {/* <img src="https://picsum.photos/300/300" alt="" className="rounded-md" /> */}
           <div className="bg-neutral-800 flex-2 rounded-md">

@@ -38,6 +38,7 @@ import { ReactSortable } from 'react-sortablejs';
 import LibraryFolder from '@/components/Items/LibraryFolder';
 import FolderRenderer from './FolderRenderer';
 import type { LibraryItem } from '@/types/Library/LibraryItem';
+import DropZone from '@/components/DropZone/DropZone';
 
 type ModalAction = { type: 'CREATE_PLAYLIST' } | { type: 'CREATE_FOLDER' };
 
@@ -73,6 +74,10 @@ const Library = () => {
     { id: 6, name: 'File AAA', parentId: 5, order: 0, isFolder: false },
     { id: 2, name: 'Folder B', parentId: null, order: 1, isFolder: true },
     { id: 4, name: 'File B', parentId: 2, order: 0, isFolder: false },
+    { id: 7, name: 'File A', parentId: null, order: 0, isFolder: false },
+    { id: 8, name: 'File A', parentId: null, order: 0, isFolder: false },
+    { id: 9, name: 'File A', parentId: null, order: 0, isFolder: false },
+    { id: 10, name: 'File A', parentId: null, order: 0, isFolder: false },
   ]);
 
   return (
@@ -115,7 +120,7 @@ const Library = () => {
           </CardAction>
         </CardHeader>
 
-        <CardContent className="flex flex-col overflow-hidden">
+        <CardContent className="flex flex-col overflow-hidden h-full">
           <ButtonGroup>
             <Select defaultValue="all">
               <SelectTrigger className="w-[100px]">
@@ -145,9 +150,7 @@ const Library = () => {
 
           <Separator className="mt-5 mb-3" />
 
-          <ScrollArea className="flex-1 overflow-auto">
-            <FolderRenderer list={list} />
-          </ScrollArea>
+          <FolderRenderer list={list} />
         </CardContent>
       </Card>
     </>
