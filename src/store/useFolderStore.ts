@@ -12,7 +12,7 @@ interface FolderState {
   buildTree: (items: LibraryItemType[], parentId?: ParentId) => LibraryItemType[];
   removeItem: (id: number) => void;
   addItem: (newItem: LibraryItemType) => void;
-  moveItem: (id: number, targetId: number) => void;
+  moveItem: (id: number, targetId: number | null) => void;
   findItem: (list: LibraryItemType[], targetId: number) => null | LibraryItemType;
 }
 
@@ -38,6 +38,7 @@ export const useFolderStore = create<FolderState>((set, get) => ({
     const newList = get().list.filter((item) => item.id !== id);
     get().setList(newList);
   },
+  // TODO: Test
   addItem: (newItem) => {
     console.log(get().list)
     const newList = [...get().list, newItem];

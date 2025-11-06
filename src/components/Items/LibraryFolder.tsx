@@ -1,41 +1,24 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, ChevronRight, ChevronUp, Folder } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { ChevronDown, ChevronRight, Folder } from 'lucide-react';
 import MAToggle from '../ui/MA/buttons/MAToggle';
-import type { ParentId } from '@/types/Library/ParentId';
 import { useFolderStore } from '@/store/useFolderStore';
+import DropZone from '../DropZone/DropZone';
+import { useDraggable } from '@/hooks/useDraggable';
 
 const LibraryFolder = ({ children, id: folderId }: { children: React.ReactNode; id: number }) => {
-  const { moveItem, removeItem } = useFolderStore();
+  const { moveItem } = useFolderStore();
+  const draggable = useDraggable(folderId);
 
   const [hidden, setHidden] = useState(false);
 
-  const dropSpaceRef = useRef<HTMLDivElement | null>(null);
-
-  const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    dropSpaceRef.current!.style.backgroundColor = 'green';
-  };
-
-  const onDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    dropSpaceRef.current!.style.backgroundColor = 'gray';
-  };
-
   const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-
     const id = Number.parseInt(e.dataTransfer.getData('my/id'));
     moveItem(id, folderId);
-
-    onDragLeave(e);
   };
 
   return (
     <>
-      <div draggable={true} className="flex flex-col rounded-lg p-1.5 border-1 mb-2 cursor-pointer">
+      <div {...draggable} className="flex flex-col rounded-lg p-1.5 border-1 mb-2 cursor-pointer">
         <div className="flex items-stretch w-full">
           {/* <img src="https://picsum.photos/300/300" alt="" className="rounded-md" /> */}
           <div className="bg-neutral-800 flex-2 rounded-md">
@@ -56,16 +39,9 @@ const LibraryFolder = ({ children, id: folderId }: { children: React.ReactNode; 
             />
           </div>
         </div>
-        <div
-          className="ml-2 mt-2 p-3"
-          ref={dropSpaceRef}
-          onDragOver={(e) => onDragOver(e)}
-          onDragEnd={(e) => onDragLeave(e)}
-          onDragLeave={(e) => onDragLeave(e)}
-          onDrop={(e) => onDrop(e)}
-        >
-          <div className={hidden ? 'hidden' : ''}>{children}</div>
-        </div>
+        <DropZone className={hidden ? 'hidden ml-2 mt-2 p-3' : 'ml-2 mt-2 p-3'} onDrop={onDrop}>
+          {children}
+        </DropZone>
       </div>
     </>
   );
